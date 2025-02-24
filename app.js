@@ -28,11 +28,11 @@ startBtn.addEventListener("click", async function beginGame() {
 });
 
 async function getQuestions() {
-  const url =
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple";
-
   try {
-    const response = await fetch(url);
+    // unnecessary to save in a variable
+    const response = await fetch(
+      "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+    );
     if (!response.ok) throw new Error("Error getting questions");
 
     const questionsData = await response.json();
